@@ -45,6 +45,15 @@ public class playermovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("DeathZone"))
+        {
+            // Reiniciar automáticamente el nivel
+            Time.timeScale = 1f;
+            UnityEngine.SceneManagement.SceneManager.LoadScene(
+                UnityEngine.SceneManagement.SceneManager.GetActiveScene().name
+            );
+        }
+
         if (collision.CompareTag("Kiwi") || collision.CompareTag("Cereza"))
         {
             Fruit fruta = collision.GetComponent<Fruit>();
