@@ -61,7 +61,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -99,7 +99,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -153,12 +153,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_1
       rect:
         serializedVersion: 2
-        x: 28
+        x: 26
         y: 0
-        width: 20
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 52
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_3
       rect:
         serializedVersion: 2
-        x: 81
+        x: 78
         y: 0
-        width: 20
+        width: 26
         height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_4
       rect:
         serializedVersion: 2
-        x: 107
-        y: 2
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 104
+        y: 0
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,12 +263,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_5
       rect:
         serializedVersion: 2
-        x: 133
-        y: 3
-        width: 20
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 130
+        y: 0
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -285,12 +285,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_6
       rect:
         serializedVersion: 2
-        x: 159
-        y: 3
-        width: 20
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 156
+        y: 0
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -307,12 +307,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_7
       rect:
         serializedVersion: 2
-        x: 185
-        y: 1
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 182
+        y: 0
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -329,12 +329,12 @@ TextureImporter:
       name: john_jump_ng_aimdiagup_8
       rect:
         serializedVersion: 2
-        x: 211
+        x: 208
         y: 0
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 22
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -351,7 +351,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 23a9126cb1deede4fa17066b2a51865c
     internalID: 0
     vertices: []
     indices: 
@@ -360,7 +360,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      john_jump_ng_aimdiagup_0: -8956185425035127218
+      john_jump_ng_aimdiagup_1: 1784819518812360364
+      john_jump_ng_aimdiagup_2: -8699431348694197614
+      john_jump_ng_aimdiagup_3: 6312929708279323006
+      john_jump_ng_aimdiagup_4: -1443156671833740402
+      john_jump_ng_aimdiagup_5: 7189851085874124983
+      john_jump_ng_aimdiagup_6: -5346049000920124365
+      john_jump_ng_aimdiagup_7: 265506289658178246
+      john_jump_ng_aimdiagup_8: -6710175933082183318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
