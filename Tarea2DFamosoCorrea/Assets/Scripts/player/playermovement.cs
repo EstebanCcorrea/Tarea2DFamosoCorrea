@@ -43,4 +43,15 @@ public class playermovement : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Kiwi") || collision.CompareTag("Cereza"))
+        {
+            Fruit fruta = collision.GetComponent<Fruit>();
+            if (fruta != null)
+            {
+                fruta.Collect();
+            }
+        }
+    }
 }
