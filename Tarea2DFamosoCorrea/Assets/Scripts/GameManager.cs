@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public int cerezasRecolectadas = 0;
     public int kiwisRecolectados = 0;
 
+    [Header("Tiempos por nivel")]
+    public List<float> tiemposNiveles = new List<float>();
+
     private void Awake()
     {
         if (GameManager.Instance == null)
@@ -57,4 +60,13 @@ public class GameManager : MonoBehaviour
         kiwisRecolectados = 0;
         Debug.Log("Contadores reiniciados.");
     }
+
+    public void RegistrarTiempoNivel(float tiempoRestante, float tiempoInicial)
+    {
+        float tiempoDemorado = tiempoInicial - tiempoRestante;
+        tiemposNiveles.Add(tiempoDemorado);
+
+        Debug.Log("Nivel " + tiemposNiveles.Count + " completado en: " + tiempoDemorado + " segundos");
+    }
+
 }
