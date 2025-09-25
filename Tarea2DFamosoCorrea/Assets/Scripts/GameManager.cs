@@ -35,9 +35,9 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         sigNivObj = GameObject.FindGameObjectWithTag("SigNiv");
-        if (sigNivObj != null) sigNivObj.SetActive(false);
+        if (sigNivObj != null) sigNivObj.SetActive(true);
 
-        tiempoScript = Object.FindFirstObjectByType<Tiempo>();
+        tiempoScript = Object.FindFirstObjectByType    <Tiempo>();
         if (tiempoScript != null)
         {
             tiempoInicial = tiempoScript.tiemporestante;
