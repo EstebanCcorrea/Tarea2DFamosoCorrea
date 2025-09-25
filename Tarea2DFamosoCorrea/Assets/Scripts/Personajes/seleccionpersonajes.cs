@@ -63,4 +63,9 @@ public class seleccionpersonajes : MonoBehaviour
         SceneManager.LoadScene("Scene1");
     }
 
+    public void SalirJuego()
+    {
+        Application.Quit();
+        Debug.Log("Salir del juego");
+    }
 }
