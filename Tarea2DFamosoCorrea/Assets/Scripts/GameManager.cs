@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Suma fruta al contador global.
+    /// </summary>
     public void SumarFruta(string tipoFruta)
     {
         if (tipoFruta == "Cereza")
@@ -33,5 +36,15 @@ public class GameManager : MonoBehaviour
             kiwisRecolectados++;
             Debug.Log("Kiwis: " + kiwisRecolectados);
         }
+    }
+
+    /// <summary>
+    /// Reinicia los contadores (usado al morir o reiniciar nivel).
+    /// </summary>
+    public void ResetCounters()
+    {
+        cerezasRecolectadas = 0;
+        kiwisRecolectados = 0;
+        Debug.Log("Contadores reiniciados.");
     }
 }

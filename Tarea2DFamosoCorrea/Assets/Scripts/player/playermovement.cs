@@ -48,6 +48,7 @@ public class playermovement : MonoBehaviour
         if (collision.CompareTag("DeathZone"))
         {
             // Reiniciar automáticamente el nivel
+            GameManager.Instance.ResetCounters(); //  reinicia contadores
             Time.timeScale = 1f;
             UnityEngine.SceneManagement.SceneManager.LoadScene(
                 UnityEngine.SceneManagement.SceneManager.GetActiveScene().name

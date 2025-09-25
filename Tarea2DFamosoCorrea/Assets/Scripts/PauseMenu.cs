@@ -17,8 +17,14 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        if (pausePanel != null)
+        if (pausePanel == null)
+        {
+            Debug.LogError(" PauseMenu: No se asignó el PausePanel en el Inspector.");
+        }
+        else
+        {
             pausePanel.SetActive(false);
+        }
     }
 
     void Update()
@@ -47,12 +53,14 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
+        GameManager.Instance.ResetCounters(); // Reinicia contadores
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoToMenu()
     {
         Time.timeScale = 1f;
+
         SceneManager.LoadScene(""); // Cambia "Menu" por el nombre exacto de tu escena principal
     }
 }
