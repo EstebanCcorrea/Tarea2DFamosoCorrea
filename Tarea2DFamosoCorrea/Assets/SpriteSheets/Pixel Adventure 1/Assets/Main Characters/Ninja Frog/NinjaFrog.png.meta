@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 38847b3502e08fd47a1473d85468013a
+guid: dd6f57512af32274ea4d6a89d8a4ecf4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7926805268162963237
-    second: main_title_bg_0
+      213: -1403019144430353907
+    second: NinjaFrog_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main_title_bg_0
+      name: NinjaFrog_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 320
-        height: 180
+        y: 48
+        width: 512
+        height: 399
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bd8937b4b945ef190800000000000000
-      internalID: -7926805268162963237
+      spriteID: d02082b8589778ce0800000000000000
+      internalID: -1403019144430353907
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      main_title_bg_0: -7926805268162963237
+      NinjaFrog_0: -1403019144430353907
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
