@@ -13,7 +13,7 @@ public class playermovement : MonoBehaviour
     public float jumpforce = 4;
     private bool isGrounded;
     public Transform groundCheck;
-    public float groundRadius = 0.1f;
+    public Vector2 groundBoxSize = new Vector2(0.5f, 0.1f); // ancho/alto del box
     public LayerMask groundLayer;
     private Animator anim;
 
@@ -41,7 +41,7 @@ public class playermovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+        isGrounded = Physics2D.OverlapBox(groundCheck.position, groundBoxSize,0f, groundLayer);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -62,6 +62,15 @@ public class playermovement : MonoBehaviour
             {
                 fruta.Collect();
             }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheck != null) return;
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(groundCheck.position, groundBoxSize);
         }
     }
 }
