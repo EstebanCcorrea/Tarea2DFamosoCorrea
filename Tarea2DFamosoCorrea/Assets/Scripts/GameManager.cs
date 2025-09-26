@@ -34,10 +34,18 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Buscar el objeto con tag "SigNiv"
         sigNivObj = GameObject.FindGameObjectWithTag("SigNiv");
-        if (sigNivObj != null) sigNivObj.SetActive(true);
 
-        tiempoScript = Object.FindFirstObjectByType    <Tiempo>();
+        // Forzar que empiece apagado
+        if (sigNivObj != null)
+        {
+            sigNivObj.SetActive(false);
+            Debug.Log("SigNiv encontrado y apagado al inicio.");
+        }
+
+        // Buscar el script Tiempo
+        tiempoScript = Object.FindFirstObjectByType<Tiempo>();
         if (tiempoScript != null)
         {
             tiempoInicial = tiempoScript.tiemporestante;
