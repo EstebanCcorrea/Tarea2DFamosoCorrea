@@ -643,6 +643,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47215207122c1cc41887b02b3940b1b2, type: 2}
   cerezasRecolectadas: 0
   kiwisRecolectados: 0
+  tiempoRestante: 60
   tiemposNiveles: []
 --- !u!4 &950340420
 Transform:
@@ -31441,19 +31442,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 977813232829000957, guid: e7a976b1fb84c2244860cc24da10bd52, type: 3}
       propertyPath: m_Color.a
-      value: 0.89411765
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 977813232829000957, guid: e7a976b1fb84c2244860cc24da10bd52, type: 3}
       propertyPath: m_Color.b
-      value: 0.12993948
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 977813232829000957, guid: e7a976b1fb84c2244860cc24da10bd52, type: 3}
       propertyPath: m_Color.g
-      value: 0.12993948
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 977813232829000957, guid: e7a976b1fb84c2244860cc24da10bd52, type: 3}
       propertyPath: m_Color.r
-      value: 0.3773585
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 991438378825413520, guid: e7a976b1fb84c2244860cc24da10bd52, type: 3}
       propertyPath: m_Pivot.x

@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
     public int cerezasRecolectadas = 0;
     public int kiwisRecolectados = 0;
 
+    [Header("Tiempo Global")]
+    public float tiempoRestante = 90f; // cronómetro global
+    private bool relojActivo = true;
+
     [Header("Tiempos por nivel")]
     public List<float> tiemposNiveles = new List<float>();
-    private float tiempoInicial;
-    private Tiempo tiempoScript;
+    private float tiempoNivelInicio;
 
     private GameObject sigNivObj;
 
@@ -34,26 +37,27 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Buscar el objeto con tag "SigNiv"
         sigNivObj = GameObject.FindGameObjectWithTag("SigNiv");
-
-        // Forzar que empiece apagado
         if (sigNivObj != null)
         {
             sigNivObj.SetActive(false);
             Debug.Log("SigNiv encontrado y apagado al inicio.");
         }
 
-        // Buscar el script Tiempo
-        tiempoScript = Object.FindFirstObjectByType<Tiempo>();
-        if (tiempoScript != null)
-        {
-            tiempoInicial = tiempoScript.tiemporestante;
-        }
+        // Guardar el tiempo al inicio del nivel
+        tiempoNivelInicio = tiempoRestante;
     }
 
     private void Update()
     {
+        // Actualizar reloj global
+        if (relojActivo && tiempoRestante > 0)
+        {
+            tiempoRestante -= Time.deltaTime;
+            if (tiempoRestante < 0) tiempoRestante = 0;
+        }
+
+        // Activar SigNiv cuando no haya frutas
         if (sigNivObj != null && !sigNivObj.activeSelf)
         {
             GameObject[] frutas = GameObject.FindGameObjectsWithTag("Cereza");
@@ -84,17 +88,14 @@ public class GameManager : MonoBehaviour
         cerezasRecolectadas = 0;
         kiwisRecolectados = 0;
         tiemposNiveles.Clear();
+        tiempoRestante = 90f; // reiniciar reloj global
     }
 
     public void RegistrarTiempoNivel()
     {
-        if (tiempoScript != null)
-        {
-            float tiempoRestante = tiempoScript.tiemporestante;
-            float tiempoDemorado = tiempoInicial - tiempoRestante;
-            tiemposNiveles.Add(tiempoDemorado);
-            Debug.Log($"Nivel {tiemposNiveles.Count} completado en {tiempoDemorado} segundos");
-        }
+        float tiempoDemorado = tiempoNivelInicio - tiempoRestante;
+        tiemposNiveles.Add(tiempoDemorado);
+        Debug.Log($"Nivel {tiemposNiveles.Count} completado en {tiempoDemorado} segundos");
 
         int escenaActual = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(escenaActual + 1);
