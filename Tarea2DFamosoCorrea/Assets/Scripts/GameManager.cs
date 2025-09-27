@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int kiwisRecolectados = 0;
 
     [Header("Tiempo Global")]
-    public float tiempoRestante = 90f; // cronómetro global
+    public float tiempoRestante = 60f; // cronómetro global
     private bool relojActivo = true;
 
     [Header("Tiempos por nivel")]
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         cerezasRecolectadas = 0;
         kiwisRecolectados = 0;
         tiemposNiveles.Clear();
-        tiempoRestante = 90f; // reiniciar reloj global
+        tiempoRestante = 60f; // reiniciar reloj globa
     }
 
     public void RegistrarTiempoNivel()
