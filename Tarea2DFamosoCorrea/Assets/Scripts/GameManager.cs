@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         cerezasRecolectadas = 0;
         kiwisRecolectados = 0;
         tiemposNiveles.Clear();
-        tiempoRestante = 60f; // reiniciar reloj globa
+        tiempoRestante = 60f; // reiniciar reloj global
     }
 
     public void RegistrarTiempoNivel()

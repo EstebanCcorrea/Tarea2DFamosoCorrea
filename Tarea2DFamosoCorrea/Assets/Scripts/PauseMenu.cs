@@ -60,7 +60,11 @@ public class PauseMenu : MonoBehaviour
     public void GoToMenu()
     {
         Time.timeScale = 1f;
-
+        // Destruir el GameManager persistente para empezar de cero
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ResetCounters(); // limpia contadores y tiempo
+        }
         SceneManager.LoadScene("Menu"); // Cambia "Menu" por el nombre exacto de tu escena principal
     }
 }
