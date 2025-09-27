@@ -53,8 +53,15 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1f;
-        GameManager.Instance.ResetCounters(); // Reinicia contadores
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        isPaused = false;
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ResetCounters(); // reinicia contadores y tiempo
+        }
+
+        // Ir siempre a la primera escena de juego
+        SceneManager.LoadScene("Scene1"); // cambia "Scene1" por el nombre real de tu escena inicial
     }
 
     public void GoToMenu()

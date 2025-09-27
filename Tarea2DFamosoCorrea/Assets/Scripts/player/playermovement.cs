@@ -12,6 +12,7 @@ public class playermovement : MonoBehaviour
 
     public float jumpforce = 4;
     private bool isGrounded;
+    [Header("Ground Check")]
     public Transform groundCheck;
     public Vector2 groundBoxSize = new Vector2(0.5f, 0.1f); // ancho/alto del box
     public LayerMask groundLayer;
@@ -36,6 +37,10 @@ public class playermovement : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(move));
         anim.SetFloat("VerticalVelocity", rb2D.linearVelocity.y);
         anim.SetBool("IsGrounded", isGrounded);
+
+        // Debug para ver si el personaje detecta el suelo
+        Debug.Log($"{gameObject.name} - Grounded: {isGrounded}");
+
 
     }
 
@@ -67,10 +72,17 @@ public class playermovement : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (groundCheck != null) return;
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(groundCheck.position, groundBoxSize);
-        }
+        if (groundCheck == null) return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(groundCheck.position, groundBoxSize);
+    }
+
+
+    public void OnDeathAnimationEnd()
+    {
+        Time.timeScale = 1f;
+        GameManager.Instance.ResetCounters();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Scene1"); // primer nivel jugable
     }
 }

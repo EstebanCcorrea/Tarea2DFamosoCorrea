@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda7d5256c3639c409df7ac4e3522f1b, type: 3}
   m_Name: RANA
   m_EditorClassIdentifier: 
-  personajeJugable: {fileID: 1183840244843291654, guid: 2c71f52243ebc134fa40fcf751d51ac8, type: 3}
+  personajeJugable: {fileID: 9218599505598421726, guid: 2c71f52243ebc134fa40fcf751d51ac8, type: 3}
   imagen: {fileID: 21300000, guid: dd6f57512af32274ea4d6a89d8a4ecf4, type: 3}
   nombrePersonaje: Rene

@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public int kiwisRecolectados = 0;
 
     [Header("Tiempo Global")]
-    public float tiempoRestante = 60f; // cronómetro global
+    [SerializeField] public float duracionTiempo = 60f; // duración total del cronómetro
+    public float tiempoRestante; // cronómetro global
     private bool relojActivo = true;
 
     [Header("Tiempos por nivel")]
@@ -44,17 +45,32 @@ public class GameManager : MonoBehaviour
             Debug.Log("SigNiv encontrado y apagado al inicio.");
         }
 
-        // Guardar el tiempo al inicio del nivel
-        tiempoNivelInicio = tiempoRestante;
+        // Iniciar o pausar reloj según la escena
+        if (scene.name == "Scene1" || scene.name == "Scene2") // puedes poner nombres exactos si prefieres
+        {
+            if (tiempoRestante <= 0) // si es la primera vez
+                tiempoRestante = duracionTiempo;
+
+            relojActivo = true;
+            tiempoNivelInicio = tiempoRestante;
+        }
+        else
+        {
+            relojActivo = false; // en el menú u otras escenas
+        }
     }
 
     private void Update()
     {
-        // Actualizar reloj global
         if (relojActivo && tiempoRestante > 0)
         {
             tiempoRestante -= Time.deltaTime;
-            if (tiempoRestante < 0) tiempoRestante = 0;
+
+            if (tiempoRestante <= 0)
+            {
+                tiempoRestante = 0;
+                PlayerDeath();
+            }
         }
 
         // Activar SigNiv cuando no haya frutas
@@ -67,6 +83,16 @@ public class GameManager : MonoBehaviour
             {
                 sigNivObj.SetActive(true);
                 Debug.Log("Todas las frutas recolectadas. Activando SigNiv.");
+            }
+        }
+        //muerte por tiempo
+        if (relojActivo && tiempoRestante > 0)
+        {
+            tiempoRestante -= Time.deltaTime;
+            if (tiempoRestante <= 0)
+            {
+                tiempoRestante = 0;
+                PlayerDeath(); // aquí disparamos animación
             }
         }
     }
@@ -99,5 +125,18 @@ public class GameManager : MonoBehaviour
 
         int escenaActual = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(escenaActual + 1);
+    }
+    private void PlayerDeath()
+    {
+        relojActivo = false; // detener reloj
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            Animator anim = player.GetComponent<Animator>();
+            if (anim != null)
+            {
+                anim.SetTrigger("Death"); // Trigger en el Animator del jugador
+            }
+        }
     }
 }

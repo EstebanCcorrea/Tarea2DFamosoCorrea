@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda7d5256c3639c409df7ac4e3522f1b, type: 3}
   m_Name: Jojo
   m_EditorClassIdentifier: 
-  personajeJugable: {fileID: 9100517982048350172, guid: c1bb688e57e53ad479bafaab14aa6366, type: 3}
+  personajeJugable: {fileID: 331974873059792266, guid: c1bb688e57e53ad479bafaab14aa6366, type: 3}
   imagen: {fileID: 21300000, guid: 0b5786d942fa95d48bc5e4fd1a2e32f4, type: 3}
   nombrePersonaje: Josue

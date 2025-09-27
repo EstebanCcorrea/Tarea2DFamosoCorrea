@@ -643,6 +643,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 47215207122c1cc41887b02b3940b1b2, type: 2}
   cerezasRecolectadas: 0
   kiwisRecolectados: 0
+  duracionTiempo: 60
   tiempoRestante: 60
   tiemposNiveles: []
 --- !u!4 &950340420
