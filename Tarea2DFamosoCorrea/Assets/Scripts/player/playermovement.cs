@@ -39,7 +39,7 @@ public class playermovement : MonoBehaviour
         anim.SetBool("IsGrounded", isGrounded);
 
         // Debug para ver si el personaje detecta el suelo
-        Debug.Log($"{gameObject.name} - Grounded: {isGrounded}");
+        //Debug.Log($"{gameObject.name} - Grounded: {isGrounded}");
 
 
     }

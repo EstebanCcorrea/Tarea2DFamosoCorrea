@@ -62,16 +62,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (relojActivo && tiempoRestante > 0)
-        {
-            tiempoRestante -= Time.deltaTime;
-
-            if (tiempoRestante <= 0)
-            {
-                tiempoRestante = 0;
-                PlayerDeath();
-            }
-        }
+        
 
         // Activar SigNiv cuando no haya frutas
         if (sigNivObj != null && !sigNivObj.activeSelf)
@@ -117,15 +108,7 @@ public class GameManager : MonoBehaviour
         tiempoRestante = 60f; // reiniciar reloj global
     }
 
-    public void RegistrarTiempoNivel()
-    {
-        float tiempoDemorado = tiempoNivelInicio - tiempoRestante;
-        tiemposNiveles.Add(tiempoDemorado);
-        Debug.Log($"Nivel {tiemposNiveles.Count} completado en {tiempoDemorado} segundos");
-
-        int escenaActual = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(escenaActual + 1);
-    }
+   
     private void PlayerDeath()
     {
         relojActivo = false; // detener reloj
@@ -139,4 +122,33 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    // Guardar tiempo y pasar a la siguiente escena
+    public void RegistrarTiempoNivel()
+    {
+        float tiempoDemorado = tiempoNivelInicio - tiempoRestante;
+        tiemposNiveles.Add(tiempoDemorado);
+        Debug.Log($"Nivel {tiemposNiveles.Count} completado en {tiempoDemorado} segundos");
+
+        int escenaActual = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(escenaActual + 1);
+    }
+
+    // Guardar tiempo del nivel actual (usado por la bandera)
+    public void RegistrarTiempoActual()
+    {
+        float tiempoDemorado = tiempoNivelInicio - tiempoRestante;
+        tiemposNiveles.Add(tiempoDemorado);
+        Debug.Log($"Nivel {tiemposNiveles.Count} completado en {tiempoDemorado} segundos");
+    }
+    public void DetenerReloj()
+    {
+        relojActivo = false;
+    }
+    public int FrutasRestantes()
+    {
+        GameObject[] frutas = GameObject.FindGameObjectsWithTag("Cereza");
+        GameObject[] kiwis = GameObject.FindGameObjectsWithTag("Kiwi");
+        return frutas.Length + kiwis.Length;
+    }
+    
 }
